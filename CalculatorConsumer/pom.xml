@@ -33,7 +33,11 @@
 			<artifactId>spring-boot-starter-amqp</artifactId>
 		</dependency>
 
-		
+		<dependency>
+			<groupId>org.calculatorlib</groupId>
+			<artifactId>calculatorlib</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<build>
