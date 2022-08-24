@@ -60,6 +60,11 @@ public class Controller implements Serializable {
         op.setA(a);
         op.setB(b);
         op.setType('/');
+        if(op.getB().equals(BigDecimal.valueOf(0))){
+            System.out.println("Error - Can't divide by 0");
+            this.rabbitMQService.sendMessage("Operation", op);
+            return "Can't divide by 0";
+        }
         op.setResult(op.getA().divide(op.getB()));
 
         System.out.println(op.getA() + "/" + op.getB());
